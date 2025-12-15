@@ -29,34 +29,67 @@ Sehat Sathi is a comprehensive healthcare management platform that provides AI-p
 ## Project Structure
 
 ```
-Sehat Sathi Code Matrix/
-├── backend/
+sehat.sathi/
+├── backend/                         # Node.js + Express API
 │   ├── src/
-│   │   ├── modules/          # Feature modules
-│   │   │   ├── auth/         # Authentication module
-│   │   │   ├── patient/      # Patient operations
-│   │   │   ├── doctor/       # Doctor operations
-│   │   │   ├── appointment/  # Appointment management
-│   │   │   ├── chatbot/      # AI chatbot
-│   │   │   └── report/       # Report generation
-│   │   ├── models/           # MongoDB models
-│   │   ├── middleware/       # Express middleware
-│   │   ├── utils/            # Utility functions
-│   │   ├── config/           # Configuration files
-│   │   └── app.js            # Express app setup
-│   ├── server.js             # Server entry point
-│   └── package.json          # Backend dependencies
+│   │   ├── modules/
+│   │   │   ├── auth/                # Login / Signup
+│   │   │   ├── patient/             # Patient management
+│   │   │   ├── doctor/              # Doctor management
+│   │   │   ├── appointment/         # Appointment booking
+│   │   │   ├── chatbot/             # Medical chatbot
+│   │   │   └── report/              # Medical reports
+│   │   ├── models/                  # Database schemas
+│   │   │   ├── User.model.js
+│   │   │   ├── Doctor.model.js
+│   │   │   └── Appointment.model.js
+│   │   ├── middleware/              # Auth & error handling
+│   │   │   ├── auth.middleware.js
+│   │   │   └── error.middleware.js
+│   │   ├── utils/                   # Helper functions
+│   │   │   ├── jwt.util.js
+│   │   │   └── response.util.js
+│   │   ├── config/                  # Configuration files
+│   │   │   ├── db.config.js
+│   │   │   └── env.config.js
+│   │   └── app.js                   # Express app setup
+│   ├── server.js                    # Server entry point
+│   └── package.json
 │
-├── frontend/                 # Frontend code (HTML, CSS, JS)
+├── frontend/                        # HTML + CSS + JS frontend
+│   ├── index.html                   # Landing page
+│   ├── pages/
+│   │   ├── login.html
+│   │   ├── register.html
+│   │   ├── dashboard.html
+│   │   ├── doctors.html
+│   │   ├── appointment.html
+│   │   └── chatbot.html
+│   ├── css/
+│   │   ├── style.css
+│   │   ├── auth.css
+│   │   └── dashboard.css
+│   ├── js/
+│   │   ├── main.js
+│   │   ├── auth.js
+│   │   ├── dashboard.js
+│   │   └── chatbot.js
+│   ├── services/
+│   │   └── api.js
+│   ├── utils/
+│   │   └── helpers.js
+│   └── assets/
+│       ├── images/
+│       └── icons/
 │
-├── docs/                     # Documentation
-│   ├── api-docs.md          # API documentation
-│   ├── flow-diagram.png     # System flow diagram
-│   └── screenshots/         # Screenshots folder
+├── docs/                            # Documentation
+│   ├── api-docs.md
+│   ├── flow-diagram.png
+│   └── screenshots/
 │
-├── .env                      # Environment variables
-├── package.json              # Root project config
-└── README.md                 # This file
+├── .env                             # Environment variables
+├── package.json                     # Root config
+└── README.md                        # Project overview
 ```
 
 ## Architecture
