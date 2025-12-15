@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Doctors - Sehat Sathi</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .doctors-header {
+            background: linear-gradient(135deg, var(--primary-blue), var(--primary-dark));
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .doctors-title {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .doctors-subtitle {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .doctors-filters {
+            background: white;
+            padding: 2rem;
+            border-radius: var(--border-radius-xl);
+            box-shadow: var(--shadow-light);
+            margin-bottom: 3rem;
+            position: sticky;
+            top: 80px;
+            z-index: 100;
+        }
+        
+        .filter-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .filter-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        
+        .filter-group label {
+            font-weight: 500;
+            color: var(--primary-dark);
+            font-size: 0.9rem;
+        }
+        
+        .filter-select, .filter-input {
+            padding: 0.75rem 1rem;
+            border: 1px solid #ddd;
+            border-radius: var(--border-radius);
+            font-size: 1rem;
+            background: var(--bg-light);
+            transition: var(--transition);
+        }
+        
+        .filter-select:focus, .filter-input:focus {
+            outline: none;
+            border-color: var(--primary-blue);
+            box-shadow: 0 0 0 3px rgba(10, 127, 213, 0.1);
+        }
+        
+        .search-doctors {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+        
+        .search-doctors input {
+            flex: 1;
+            padding: 0.75rem 1rem;
+            border: 1px solid #ddd;
+            border-radius: var(--border-radius);
+            font-size: 1rem;
+        }
+        
+        .doctors-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .doctor-card {
+            background: white;
+            border-radius: var(--border-radius-xl);
+            overflow: hidden;
+            box-shadow: var(--shadow-light);
+            transition: var(--transition);
+            border: 1px solid transparent;
+        }
+        
+        .doctor-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow);
+            border-color: var(--primary-blue);
+        }
+        
+        .doctor-header {
+            position: relative;
+            padding: 2rem 2rem 1rem;
+            background: linear-gradient(135deg, var(--primary-blue), var(--primary-dark));
+            color: white;
+            text-align: center;
+        }
+        
+        .doctor-avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin: 0 auto 1rem;
+            border: 4px solid white;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-blue);
+            font-size: 2rem;
+        }
+        
+        .doctor-verified {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: var(--primary-green);
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .doctor-name {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+        
+        .doctor-specialization {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+        
+        .doctor-details {
+            padding: 1.5rem;
+        }
+        
+        .doctor-info {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .doctor-info-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+        
+        .doctor-info-item i {
+            color: var(--primary-blue);
+            width: 16px;
+        }
+        
+        .doctor-availability {
+            background: var(--bg-light);
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            margin-bottom: 1.5rem;
+        }
+        
+        .availability-title {
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            color: var(--primary-dark);
+        }
+        
+        .availability-slots {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        
+        .time-slot {
+            padding: 0.5rem 1rem;
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: var(--border-radius);
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .time-slot:hover {
+            border-color: var(--primary-blue);
+            background: var(--primary-light);
+        }
+        
+        .time-slot.selected {
+            background: var(--primary-blue);
+            color: white;
+            border-color: var(--primary-blue);
+        }
+        
+        .doctor-actions {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .btn-consult {
+            flex: 1;
+            background: var(--primary-green);
+            color: white;
+            padding: 0.75rem;
+            border: none;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .btn-consult:hover {
+            background: #0d9a5f;
+        }
+        
+        .btn-profile {
+            flex: 1;
+            background: var(--primary-blue);
+            color: white;
+            padding: 0.75rem;
+            border: none;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .btn-profile:hover {
+            background: #096bb0;
+        }
+        
+        .doctor-featured {
+            background: linear-gradient(135deg, #fff9e6, #fff3cd);
+            border: 2px solid #f39c12;
+        }
+        
+        .featured-badge {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            background: #f39c12;
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        
+        .pagination {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 3rem;
+        }
+        
+        .pagination-btn {
+            padding: 0.5rem 1rem;
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .pagination-btn:hover {
+            background: var(--bg-light);
+        }
+        
+        .pagination-btn.active {
+            background: var(--primary-blue);
+            color: white;
+            border-color: var(--primary-blue);
+        }
+        
+        .no-doctors {
+            grid-column: 1 / -1;
+            text-align: center;
+            padding: 3rem;
+            background: var(--bg-light);
+            border-radius: var(--border-radius-xl);
+        }
+        
+        .loading-doctors {
+            grid-column: 1 / -1;
+            text-align: center;
+            padding: 3rem;
+        }
+        
+        .loading-spinner {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            border: 3px solid var(--bg-light);
+            border-radius: 50%;
+            border-top-color: var(--primary-blue);
+            animation: spin 1s ease-in-out infinite;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        @media (max-width: 768px) {
+            .doctors-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .filter-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .doctors-filters {
+                padding: 1.5rem;
+                position: static;
+            }
+            
+            .doctors-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header (Will be loaded by main.js) -->
+    <div id="header"></div>
+    
+    <!-- Main Content -->
+    <main class="container">
+        <!-- Doctors Header -->
+        <section class="doctors-header">
+            <h1 class="doctors-title">Find Your Doctor</h1>
+            <p class="doctors-subtitle">Book appointments with verified doctors across 35+ specialities</p>
+        </section>
+        
+        <!-- Filters -->
+        <section class="doctors-filters">
+            <div class="filter-grid">
+                <div class="filter-group">
+                    <label for="speciality"><i class="fas fa-stethoscope"></i> Speciality</label>
+                    <select id="speciality" class="filter-select">
+                        <option value="">All Specialities</option>
+                        <option value="general">General Physician</option>
+                        <option value="cardiologist">Cardiologist</option>
+                        <option value="dermatologist">Dermatologist</option>
+                        <option value="gastroenterologist">Gastroenterologist</option>
+                        <option value="gynecologist">Gynecologist</option>
+                        <option value="neurologist">Neurologist</option>
+                        <option value="orthopedic">Orthopedic</option>
+                        <option value="pediatrician">Pediatrician</option>
+                        <option value="psychiatrist">Psychiatrist</option>
+                        <option value="pulmonologist">Pulmonologist</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <label for="location"><i class="fas fa-map-marker-alt"></i> Location</label>
+                    <select id="location" class="filter-select">
+                        <option value="">All Locations</option>
+                        <option value="delhi">Delhi</option>
+                        <option value="mumbai">Mumbai</option>
+                        <option value="bangalore">Bangalore</option>
+                        <option value="chennai">Chennai</option>
+                        <option value="kolkata">Kolkata</option>
+                        <option value="hyderabad">Hyderabad</option>
+                        <option value="pune">Pune</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <label for="experience"><i class="fas fa-briefcase"></i> Experience</label>
+                    <select id="experience" class="filter-select">
+                        <option value="">Any Experience</option>
+                        <option value="0-5">0-5 years</option>
+                        <option value="5-10">5-10 years</option>
+                        <option value="10-15">10-15 years</option>
+                        <option value="15+">15+ years</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <label for="language"><i class="fas fa-language"></i> Language</label>
+                    <select id="language" class="filter-select">
+                        <option value="">All Languages</option>
+                        <option value="english">English</option>
+                        <option value="hindi">Hindi</option>
+                        <option value="bengali">Bengali</option>
+                        <option value="tamil">Tamil</option>
+                        <option value="telugu">Telugu</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="search-doctors">
+                <input type="text" id="search-doctor" placeholder="Search doctor by name, speciality, or symptom...">
+                <button class="btn btn-primary" id="search-btn">
+                    <i class="fas fa-search"></i> Search
+                </button>
+            </div>
+        </section>
+        
+        <!-- Doctors Grid -->
+        <section class="doctors-container">
+            <div class="doctors-grid" id="doctors-grid">
+                <!-- Doctors will be loaded dynamically -->
+                <div class="loading-doctors">
+                    <div class="loading-spinner"></div>
+                    <p>Loading doctors...</p>
+                </div>
+            </div>
+            
+            <!-- Pagination -->
+            <div class="pagination" id="pagination">
+                <button class="pagination-btn" id="prev-page">
+                    <i class="fas fa-chevron-left"></i> Previous
+                </button>
+                <span id="page-numbers"></span>
+                <button class="pagination-btn" id="next-page">
+                    Next <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Footer (Will be loaded by main.js) -->
+    <div id="footer"></div>
+    
+    <!-- Modal for Booking -->
+    <div class="modal" id="booking-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Book Appointment</h3>
+                <button class="close-modal" id="close-booking-modal">&times;</button>
+            </div>
+            
+            <div class="modal-body" id="booking-form">
+                <!-- Booking form will be loaded here -->
+            </div>
+        </div>
+    </div>
+    
+    <script src="../js/main.js"></script>
+    <script src="../js/doctors.js"></script>
+</body>
+</html>

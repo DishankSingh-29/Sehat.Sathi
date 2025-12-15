@@ -1,0 +1,1153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sehat Sathi - AI Symptom Check & Healthcare Assistance</title>
+    <meta name="description" content="AI-first symptom check and healthcare assistance. Get trusted AI guidance in your language in under a minute.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/auth.css">
+</head>
+<body>
+    <!-- Skip to content link for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <img src="assets/images/logoSehat.png" alt="Sehat Sathi Logo" class="logo-img">
+                    <span>Sehat Sathi</span>
+                </div>
+                
+                <!-- PROFESSIONAL NAV LINKS -->
+                <div class="nav-links">
+                    <a href="#medicine-delivery" class="nav-link">
+                        <i class="fas fa-prescription-bottle-alt"></i>
+                        <span>Medicine Delivery</span>
+                    </a>
+                    <a href="#consult-doctors" class="nav-link">
+                        <i class="fas fa-user-md"></i>
+                        <span>Consult Doctors</span>
+                    </a>
+                    <a href="#lab-tests" class="nav-link">
+                        <i class="fas fa-flask"></i>
+                        <span>Lab Tests</span>
+                    </a>
+                    <!-- Hidden links for mobile menu -->
+                    <a href="#home" class="nav-link hidden-on-desktop">
+                        <i class="fas fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                    <a href="#how-it-works" class="nav-link hidden-on-desktop">
+                        <i class="fas fa-cogs"></i>
+                        <span>How it Works</span>
+                    </a>
+                    <a href="#features" class="nav-link hidden-on-desktop">
+                        <i class="fas fa-star"></i>
+                        <span>Features</span>
+                    </a>
+                    <a href="#why-choose-us" class="nav-link hidden-on-desktop">
+                        <i class="fas fa-thumbs-up"></i>
+                        <span>Why Choose Us</span>
+                    </a>
+                    <a href="#contact" class="nav-link hidden-on-desktop">
+                        <i class="fas fa-address-book"></i>
+                        <span>Contact</span>
+                    </a>
+                </div>
+                
+                <div class="nav-right">
+                    <!-- Language Selector -->
+                    <div class="language-selector">
+                        <div class="language-btn">
+                            <i class="fas fa-globe"></i>
+                            <span>English</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="language-dropdown">
+                            <div class="language-option" data-lang="en">English</div>
+                            <div class="language-option" data-lang="hi">Hindi</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Check Symptoms CTA -->
+                    <button class="btn btn-primary" id="check-symptoms-btn">Check Symptoms</button>
+                    
+                    <!-- Mobile Menu Toggle -->
+                    <div class="hamburger" id="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </nav>
+            
+            <!-- Mobile Menu -->
+            <div class="mobile-menu" id="mobile-menu">
+                <div class="mobile-nav-links">
+                    <a href="#medicine-delivery" class="mobile-nav-link">
+                        <i class="fas fa-prescription-bottle-alt"></i>
+                        <span>Medicine Delivery</span>
+                    </a>
+                    <a href="#consult-doctors" class="mobile-nav-link">
+                        <i class="fas fa-user-md"></i>
+                        <span>Consult Doctors</span>
+                    </a>
+                    <a href="#lab-tests" class="mobile-nav-link">
+                        <i class="fas fa-flask"></i>
+                        <span>Lab Tests</span>
+                    </a>
+                    <a href="#home" class="mobile-nav-link">
+                        <i class="fas fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                    <a href="#how-it-works" class="mobile-nav-link">
+                        <i class="fas fa-cogs"></i>
+                        <span>How it Works</span>
+                    </a>
+                    <a href="#features" class="mobile-nav-link">
+                        <i class="fas fa-star"></i>
+                        <span>Features</span>
+                    </a>
+                    <a href="#why-choose-us" class="mobile-nav-link">
+                        <i class="fas fa-thumbs-up"></i>
+                        <span>Why Choose Us</span>
+                    </a>
+                    <a href="#contact" class="mobile-nav-link">
+                        <i class="fas fa-address-book"></i>
+                        <span>Contact</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Hero Section with Animated Background -->
+        <section class="hero" id="home">
+            <div class="hero-slideshow">
+                <!-- 4 Background Images with Sliding Animation -->
+                <div class="slide slide-1 active"></div>
+                <div class="slide slide-2"></div>
+                <div class="slide slide-3"></div>
+                <div class="slide slide-4"></div>
+            </div>
+            
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="hero-title">Every Health Problem, One AI Solution</h1>
+                    <div class="hero-subtitle">
+                        <div class="typewriter-container">
+                            <!-- ENHANCED Typewriter Text Animation -->
+                            <div class="typewriter-text">No more Confusion</div>
+                            <div class="typewriter-text">No more Delay</div>
+                            <div class="typewriter-text">Only Instant Solution</div>
+                        </div>
+                    </div>
+                    <p class="hero-description">
+                        Describe your symptoms, get trusted AI guidance, and connect with real help all in under a minute, in your language.
+                    </p>
+                    
+                    <div class="hero-badges">
+                        <div class="badge">
+                            <i class="fas fa-language"></i>
+                            <span>Available in 8+ Regional languages</span>
+                        </div>
+                        <div class="badge">
+                            <i class="fas fa-headset"></i>
+                            <span>24/7 Support</span>
+                        </div>
+                    </div>
+                    
+                    <button class="btn btn-primary btn-large" id="hero-cta">Check Symptoms</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Medicine Delivery Section -->
+        <section class="section medicine-delivery-section" id="medicine-delivery">
+            <div class="container">
+                <div class="medicine-delivery-container">
+                    <!-- Professional Video Container -->
+                    <div class="medicine-delivery-video-container">
+                        <!-- Video without controls - Clean Professional Look -->
+                        <video class="medicine-delivery-video" autoplay muted loop playsinline>
+                            <source src="assets/images/medicine-video.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="video-placeholder" style="display: none;">
+                            <i class="fas fa-prescription-bottle-alt"></i>
+                            <p>Replace with MP4 video</p>
+                            <small>Add video URL to the source tag above</small>
+                        </div>
+                    </div>
+                    
+                    <div class="medicine-delivery-content">
+                        <h2>Fast Medicine Delivery</h2>
+                        <p>Get your prescribed medicines delivered to your doorstep from the nearest pharmacy. Upload your prescription or search for medicines directly.</p>
+                        
+                        <div class="medicine-delivery-features">
+                            <div class="medicine-feature">
+                                <i class="fas fa-shipping-fast"></i>
+                                <span>Fast Delivery (1-2 hours)</span>
+                            </div>
+                            <div class="medicine-feature">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Nearest Pharmacy</span>
+                            </div>
+                            <div class="medicine-feature">
+                                <i class="fas fa-file-prescription"></i>
+                                <span>Upload Prescription</span>
+                            </div>
+                            <div class="medicine-feature">
+                                <i class="fas fa-search"></i>
+                                <span>Search Medicines</span>
+                            </div>
+                        </div>
+                        
+                        <button class="btn btn-primary btn-large" id="order-medicine-btn">Order Medicines Now</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- UPDATED SECTION: Consult India's Top Doctors Online -->
+        <section class="section consult-doctors-section" id="consult-doctors">
+            <div class="container">
+                <h2 class="section-title">Consult India's Top Doctors Online</h2>
+                
+                <div class="consult-doctors-container">
+                    <div class="consult-doctors-image">
+                        <!-- Doctor Consultation Image -->
+                        <img src="assets/images/Docter.png" alt="Online Doctor Consultation">
+                    </div>
+                    
+                    <div class="consult-doctors-content">
+                        <div class="subtitle">If you know your diagnosis and are undergoing treatment with a specific doctor</div>
+                        <p>Consult online in 10 mins • Free follow-up for 5 days</p>
+                        
+                        <!-- Stats Container -->
+                        <div class="stats-container">
+                            <div class="stat-item">
+                                <div class="stat-number">35+</div>
+                                <div class="stat-label">Specialities</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">10L+</div>
+                                <div class="stat-label">Satisfied Users</div>
+                            </div>
+                        </div>
+                        
+                        <!-- Symptoms Section -->
+                        <div class="symptoms-section">
+                            <h4>Select Your Symptom to View Doctors</h4>
+                            <div class="symptoms-grid">
+                                <div class="symptom-item" data-symptom="stomach-ache">Stomach Ache</div>
+                                <div class="symptom-item" data-symptom="period-issue">Period Issue</div>
+                                <div class="symptom-item" data-symptom="ache-pimples">Ache / Pimples</div>
+                                <div class="symptom-item" data-symptom="fever">Fever</div>
+                                <div class="symptom-item" data-symptom="depression">Depression</div>
+                                <div class="symptom-item" data-symptom="diabetes">Diabetes</div>
+                                <div class="symptom-item" data-symptom="cough">Cough</div>
+                                <div class="symptom-item" data-symptom="hairfall">Hairfall</div>
+                                <div class="symptom-item" data-symptom="gastritis">Gastritis</div>
+                                <div class="symptom-item" data-symptom="body-pain">Body Pain</div>
+                            </div>
+                        </div>
+                        
+                        <div style="margin-top: 2rem;">
+                            <button class="btn btn-secondary" id="view-all-symptoms-btn">View All Symptoms</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Doctor Modal -->
+        <div class="doctor-modal" id="doctor-modal">
+            <div class="doctor-modal-content">
+                <div class="doctor-modal-header">
+                    <h3 class="doctor-modal-title" id="doctor-modal-title">Doctors for <span id="symptom-name">Stomach Ache</span></h3>
+                    <button class="close-doctor-modal" id="close-doctor-modal">&times;</button>
+                </div>
+                
+                <div class="doctors-list" id="doctors-list">
+                    <!-- Doctors will be loaded dynamically -->
+                </div>
+                
+                <div style="text-align: center; margin-top: 1.5rem;">
+                    <button class="btn btn-secondary" id="close-doctors-btn">Close</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Payment Modal -->
+        <div class="payment-modal" id="payment-modal">
+            <div class="payment-modal-content">
+                <div class="payment-header">
+                    <i class="fas fa-lock"></i>
+                    <h3>Complete Your Payment</h3>
+                    <p>Secure payment powered by Razorpay</p>
+                </div>
+                
+                <div class="payment-details" id="payment-details">
+                    <!-- Payment details will be loaded dynamically -->
+                </div>
+                
+                <div class="payment-options">
+                    <div class="payment-option" id="payment-option-card">
+                        <i class="fas fa-credit-card"></i>
+                        <div>Credit/Debit Card</div>
+                    </div>
+                    <div class="payment-option" id="payment-option-upi">
+                        <i class="fas fa-mobile-alt"></i>
+                        <div>UPI</div>
+                    </div>
+                    <div class="payment-option" id="payment-option-netbanking">
+                        <i class="fas fa-university"></i>
+                        <div>Net Banking</div>
+                    </div>
+                    <div class="payment-option" id="payment-option-wallet">
+                        <i class="fas fa-wallet"></i>
+                        <div>Wallet</div>
+                    </div>
+                </div>
+                
+                <div class="payment-confirmation" id="payment-confirmation">
+                    <i class="fas fa-check-circle"></i>
+                    <h3>Payment Successful!</h3>
+                    <p>Your consultation has been booked successfully.</p>
+                    <p>The doctor will connect with you within 10 minutes.</p>
+                    <div style="margin-top: 1.5rem;">
+                        <button class="btn btn-primary" id="close-payment-btn">Close</button>
+                    </div>
+                </div>
+                
+                <div class="payment-actions">
+                    <button class="btn btn-secondary" id="cancel-payment-btn">Cancel</button>
+                    <button class="btn btn-primary" id="proceed-payment-btn">Pay Now</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- UPDATED SECTION: Book At-Home Lab Tests -->
+        <section class="section lab-tests-section" id="lab-tests">
+            <div class="container">
+                <h2 class="section-title">Book At-Home Lab Tests</h2>
+                
+                <div class="lab-tests-container">
+                    <div class="lab-tests-content">
+                        <h3>1. NABL & CAP accredited labs</h3>
+                        <p>Smart reports in 12 hrs • Trusted Users • Flat 60% OFF on Health Checks</p>
+                        
+                        <!-- Location Search Section -->
+                        <div class="location-search-container">
+                            <h3>Find Nearest Pathology Partners</h3>
+                            
+                            <div class="location-options">
+                                <button class="location-option-btn active" id="use-live-location">
+                                    <i class="fas fa-location-arrow"></i> Use My Live Location
+                                </button>
+                                <button class="location-option-btn" id="enter-location">
+                                    <i class="fas fa-map-marker-alt"></i> Enter Location
+                                </button>
+                            </div>
+                            
+                            <div class="location-search-box">
+                                <input type="text" id="location-search-input" placeholder="Enter your city or area">
+                                <button class="btn btn-primary" id="search-pathology-btn">Search</button>
+                            </div>
+                            
+                            <!-- Map Container -->
+                            <div class="map-container" id="map-container">
+                                <div id="map"></div>
+                            </div>
+                            
+                            <!-- Pathology Partners Results -->
+                            <div class="pathology-partners" id="pathology-partners">
+                                <h4>Nearest Registered Pathology Partners</h4>
+                                <div class="partners-grid" id="partners-grid">
+                                    <!-- Partners will be dynamically loaded here -->
+                                </div>
+                            </div>
+                            
+                            <!-- Connection Status -->
+                            <div class="connection-status" id="connection-status">
+                                <i class="fas fa-spinner fa-spin"></i>
+                                <h4>Connecting to Pathology Partner...</h4>
+                                <p>Please wait while we establish a connection.</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Lab Features Grid -->
+                        <div class="lab-features-grid">
+                            <div class="lab-feature">
+                                <i class="fas fa-certificate"></i>
+                                <span>NABL & CAP Accredited</span>
+                            </div>
+                            <div class="lab-feature">
+                                <i class="fas fa-clock"></i>
+                                <span>Smart reports in 12 hrs</span>
+                            </div>
+                            <div class="lab-feature">
+                                <i class="fas fa-users"></i>
+                                <span>Trusted Users</span>
+                            </div>
+                            <div class="lab-feature">
+                                <i class="fas fa-tag"></i>
+                                <span>Flat 60% OFF</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Medicine Delivery Modal -->
+        <div class="medicine-modal" id="medicine-modal">
+            <div class="medicine-modal-content">
+                <div class="medicine-modal-header">
+                    <h3 class="medicine-modal-title">Order Medicines</h3>
+                    <button class="close-medicine-modal" id="close-medicine-modal">&times;</button>
+                </div>
+                
+                <!-- Medicine Tabs -->
+                <div class="medicine-tabs">
+                    <div class="medicine-tab active" data-tab="search">Search Medicines</div>
+                    <div class="medicine-tab" data-tab="camera">Scan with Camera</div>
+                    <div class="medicine-tab" data-tab="upload">Upload Prescription</div>
+                </div>
+                
+                <!-- Search Medicines Tab -->
+                <div class="medicine-tab-content active" id="search-tab">
+                    <div class="medicine-search-section">
+                        <h3>Search for Medicines</h3>
+                        <div class="medicine-search-box">
+                            <input type="text" id="medicine-search-input" placeholder="Enter medicine name...">
+                            <button class="btn btn-primary" id="search-medicine-btn">Search</button>
+                        </div>
+                        
+                        <!-- Medicine Suggestions -->
+                        <div class="medicine-suggestions" id="medicine-suggestions"></div>
+                        
+                        <!-- Popular Medicines Grid -->
+                        <div class="popular-medicines">
+                            <h3>Popular Medicines</h3>
+                            <div class="medicines-grid" id="popular-medicines-grid">
+                                <!-- Popular medicines will be loaded dynamically -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Camera Scan Tab -->
+                <div class="medicine-tab-content" id="camera-tab">
+                    <div class="camera-scan-section">
+                        <h3>Scan Medicine with Camera</h3>
+                        <div class="camera-container" id="camera-container">
+                            <i class="fas fa-camera"></i>
+                            <p>Click to open camera and scan medicine</p>
+                            <p class="file-types">Position medicine clearly in frame</p>
+                        </div>
+                        
+                        <!-- Camera Preview -->
+                        <div class="camera-preview" id="camera-preview">
+                            <video id="camera-video" autoplay playsinline></video>
+                            <canvas id="camera-canvas" style="display: none;"></canvas>
+                        </div>
+                        
+                        <!-- Camera Controls -->
+                        <div class="camera-controls">
+                            <div class="capture-btn" id="capture-btn">
+                                <i class="fas fa-camera"></i>
+                            </div>
+                        </div>
+                        
+                        <!-- Scanned Medicines Results -->
+                        <div class="scanned-medicines" id="scanned-medicines">
+                            <h4>Detected Medicines:</h4>
+                            <div id="scanned-medicines-list"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Upload Prescription Tab -->
+                <div class="medicine-tab-content" id="upload-tab">
+                    <div class="medicine-search-section">
+                        <h3>Upload Prescription</h3>
+                        <div class="upload-section" id="upload-prescription">
+                            <i class="fas fa-file-upload"></i>
+                            <p>Click to upload prescription</p>
+                            <p class="file-types">Supports PDF, JPG, PNG formats</p>
+                            <input type="file" id="prescription-file" accept=".pdf,.jpg,.jpeg,.png" style="display: none;">
+                        </div>
+                        <div class="file-preview" id="file-preview">
+                            <p><i class="fas fa-file"></i> <span id="file-name">No file selected</span></p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Current Cart Items -->
+                <div id="current-cart-items" style="margin-top: 2rem; padding: 1rem; background: var(--bg-light); border-radius: var(--border-radius);">
+                    <h4>Current Cart Items: <span id="cart-count">0</span></h4>
+                    <div id="cart-items-list" style="max-height: 150px; overflow-y: auto;"></div>
+                </div>
+                
+                <!-- Modal Actions -->
+                <div class="medicine-modal-actions" style="display: flex; justify-content: space-between; margin-top: 2rem;">
+                    <button class="btn btn-secondary" id="cancel-medicine-btn">Cancel</button>
+                    <button class="btn btn-primary" id="proceed-to-cart-btn">Proceed to Cart Page</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Medicine Cart Page -->
+        <section class="medicine-cart-page" id="medicine-cart-page">
+            <div class="container">
+                <!-- Cart Header -->
+                <div class="medicine-cart-header">
+                    <h1 class="medicine-cart-title">🛒 Medicine Cart</h1>
+                    <p class="medicine-cart-subtitle">Review your order, apply coupons, and complete delivery details</p>
+                </div>
+                
+                <!-- Main Cart Content -->
+                <div class="medicine-cart-container">
+                    <!-- Left Column: Cart Items -->
+                    <div class="cart-items-section">
+                        <div class="cart-items-header">
+                            <h2 class="cart-items-title">Your Medicines</h2>
+                            <button class="clear-cart-btn" id="clear-cart-btn">
+                                <i class="fas fa-trash"></i> Clear All
+                            </button>
+                        </div>
+                        
+                        <!-- Cart Items Container -->
+                        <div id="cart-items-container">
+                            <!-- Cart items will be dynamically added here -->
+                            <div class="empty-cart" id="empty-cart">
+                                <i class="fas fa-shopping-cart"></i>
+                                <h3>Your cart is empty</h3>
+                                <p>Add medicines by searching, scanning with camera, or uploading prescription</p>
+                                <button class="btn btn-primary" id="add-more-medicines-btn" style="margin-top: 1rem;">
+                                    <i class="fas fa-plus"></i> Add Medicines
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Right Column: Order Summary -->
+                    <div class="cart-summary-section">
+                        <h2 class="cart-summary-title">Order Summary</h2>
+                        
+                        <!-- Price Breakdown -->
+                        <div class="price-breakdown">
+                            <div class="price-row">
+                                <span>Medicine Total</span>
+                                <span id="medicine-total">₹0</span>
+                            </div>
+                            <div class="price-row">
+                                <span>GST (5%)</span>
+                                <span id="gst-amount">₹0</span>
+                            </div>
+                            <div class="price-row">
+                                <span>Handling Charge</span>
+                                <span id="handling-charge">₹10</span>
+                            </div>
+                            <div class="price-row">
+                                <span>Delivery Charge</span>
+                                <span id="delivery-charge">₹40</span>
+                            </div>
+                            <div class="price-row" id="discount-row" style="display: none;">
+                                <span>Discount Applied</span>
+                                <span id="discount-amount" style="color: var(--primary-green);">-₹0</span>
+                            </div>
+                            <div class="price-row total">
+                                <span>Total Amount</span>
+                                <span id="total-amount">₹50</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Coupon Section -->
+                        <div class="coupon-section">
+                            <h4><i class="fas fa-tag"></i> Apply Coupon Code</h4>
+                            <div class="coupon-input">
+                                <input type="text" id="coupon-code-input" placeholder="Enter coupon code">
+                                <button class="btn btn-primary" id="apply-coupon-btn">Apply</button>
+                            </div>
+                            <div class="coupon-message" id="coupon-message"></div>
+                        </div>
+                        
+                        <!-- Delivery Address Section -->
+                        <div class="address-section">
+                            <h4><i class="fas fa-map-marker-alt"></i> Delivery Address</h4>
+                            
+                            <div class="location-options">
+                                <div class="location-option" id="auto-location-option">
+                                    <input type="radio" id="auto-location" name="location" checked>
+                                    <label for="auto-location">
+                                        <i class="fas fa-location-arrow"></i>
+                                        <div>
+                                            <strong>Use Current Location</strong>
+                                            <small style="display: block; color: var(--text-light);">Get fastest delivery using GPS</small>
+                                        </div>
+                                    </label>
+                                </div>
+                                
+                                <div class="location-option" id="manual-location-option">
+                                    <input type="radio" id="manual-location" name="location">
+                                    <label for="manual-location">
+                                        <i class="fas fa-edit"></i>
+                                        <div>
+                                            <strong>Enter Address Manually</strong>
+                                            <small style="display: block; color: var(--text-light);">Enter your complete address</small>
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <!-- Manual Address Input -->
+                            <div class="address-input-fields" id="manual-address-input">
+                                <div class="address-input">
+                                    <label for="full-address">Full Address</label>
+                                    <textarea id="full-address" placeholder="Enter your complete address"></textarea>
+                                </div>
+                                
+                                <div class="address-input">
+                                    <label for="city">City</label>
+                                    <input type="text" id="city" placeholder="Enter city">
+                                </div>
+                                
+                                <div class="address-input">
+                                    <label for="pincode">Pincode</label>
+                                    <input type="text" id="pincode" placeholder="Enter pincode">
+                                </div>
+                            </div>
+                            
+                            <!-- GPS Location Info -->
+                            <div class="gps-location-info" id="gps-location-info">
+                                <p>
+                                    <i class="fas fa-check-circle"></i>
+                                    Location detected: <span id="current-location">Fetching location...</span>
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <!-- Delivery Time Section -->
+                        <div class="delivery-time-section">
+                            <h4><i class="fas fa-clock"></i> Delivery Time</h4>
+                            <div class="time-options">
+                                <div class="time-option" id="time-option-1">
+                                    <input type="radio" id="time-1" name="delivery-time" checked>
+                                    <label for="time-1">
+                                        <strong>Express (1-2 hrs)</strong>
+                                        <small style="display: block; color: var(--text-light);">₹40 extra</small>
+                                    </label>
+                                </div>
+                                <div class="time-option" id="time-option-2">
+                                    <input type="radio" id="time-2" name="delivery-time">
+                                    <label for="time-2">
+                                        <strong>Standard (3-4 hrs)</strong>
+                                        <small style="display: block; color: var(--text-light);">₹20 extra</small>
+                                    </label>
+                                </div>
+                                <div class="time-option" id="time-option-3">
+                                    <input type="radio" id="time-3" name="delivery-time">
+                                    <label for="time-3">
+                                        <strong>Scheduled</strong>
+                                        <small style="display: block; color: var(--text-light);">Select time</small>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Cart Actions -->
+                        <div class="cart-actions">
+                            <button class="btn btn-secondary back-to-shop" id="back-to-shop-btn">
+                                <i class="fas fa-arrow-left"></i> Back to Shop
+                            </button>
+                            <button class="btn btn-primary" id="place-order-btn">
+                                <i class="fas fa-shopping-bag"></i> Place Order
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Order Confirmation Modal -->
+        <div class="order-confirmation-modal" id="order-confirmation-modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title">🎉 Order Confirmed!</h3>
+                    <button class="close-modal" id="close-order-modal">&times;</button>
+                </div>
+                
+                <div style="text-align: center; padding: 2rem;">
+                    <div style="font-size: 4rem; color: var(--primary-green); margin-bottom: 1rem;">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <h3 style="margin-bottom: 1rem; color: var(--primary-dark);">Thank You for Your Order!</h3>
+                    <p style="color: var(--text-light); margin-bottom: 1.5rem;">
+                        Your order <strong id="order-id">#SS-789456</strong> has been confirmed and will be delivered soon.
+                    </p>
+                    <div style="background: var(--bg-light); padding: 1rem; border-radius: var(--border-radius); margin-bottom: 1.5rem;">
+                        <p><strong>Estimated Delivery:</strong> <span id="estimated-delivery-time">Within 1-2 hours</span></p>
+                        <p><strong>Delivery Address:</strong> <span id="confirmed-address">Your current location</span></p>
+                    </div>
+                    <p style="font-size: 0.9rem; color: var(--text-light);">
+                        You'll receive tracking updates via SMS. For any queries, call our support at 1800-123-4567.
+                    </p>
+                </div>
+                
+                <div style="display: flex; gap: 1rem; margin-top: 2rem;">
+                    <button class="btn btn-secondary" style="flex: 1;" id="continue-shopping-btn">Continue Shopping</button>
+                    <button class="btn btn-primary" style="flex: 1;" id="track-order-btn">Track Order</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- How It Works Section -->
+        <section class="section how-it-works" id="how-it-works">
+            <div class="container">
+                <h2 class="section-title">How Sehat Sathi Works</h2>
+                
+                <div class="steps-container">
+                    <div class="step-card">
+                        <div class="step-icon">
+                            <i class="fas fa-comment-medical"></i>
+                        </div>
+                        <h3 class="step-title">Describe Your Symptoms</h3>
+                        <p class="step-description">Simply tell us what you're feeling through text or voice input in your preferred language.</p>
+                    </div>
+                    
+                    <div class="step-card">
+                        <div class="step-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h3 class="step-title">AI-Powered Analysis</h3>
+                        <p class="step-description">Our advanced AI analyzes symptoms to provide accurate health assessments and priority levels.</p>
+                    </div>
+                    
+                    <div class="step-card">
+                        <div class="step-icon">
+                            <i class="fas fa-hand-holding-heart"></i>
+                        </div>
+                        <h3 class="step-title">Personalized Guidance</h3>
+                        <p class="step-description">Receive tailored recommendations, next steps, and local healthcare provider connections.</p>
+                    </div>
+                    
+                    <div class="step-card">
+                        <div class="step-icon">
+                            <i class="fas fa-user-md"></i>
+                        </div>
+                        <h3 class="step-title">Connect to Healthcare</h3>
+                        <p class="step-description">Seamlessly connect with doctors, order medicines, or book lab tests—all in one platform.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="section features" id="features">
+            <div class="container">
+                <h2 class="section-title">Powerful Future-Ready Features</h2>
+                
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-language"></i>
+                        </div>
+                        <h3 class="feature-title">Multilingual AI Assistant</h3>
+                        <p class="feature-description">Communicate in 8+ regional languages with our intelligent AI that understands local health contexts.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-exclamation-triangle"></i>
+                        </div>
+                        <h3 class="feature-title">Smart Urgency Detection</h3>
+                        <p class="feature-description">AI-driven triage system prioritizes symptoms based on severity for timely medical attention.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3 class="feature-title">Bank-Level Security</h3>
+                        <p class="feature-description">End-to-end encryption and privacy-first data storage with complete user control over information.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-wifi"></i>
+                        </div>
+                        <h3 class="feature-title">Offline Capable PWA</h3>
+                        <p class="feature-description">Access basic features even without internet connectivity, perfect for rural and remote areas.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-hospital"></i>
+                        </div>
+                        <h3 class="feature-title">Healthcare Ecosystem</h3>
+                        <p class="feature-description">Integrated network of doctors, pharmacies, labs, and hospitals for comprehensive care.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-file-pdf"></i>
+                        </div>
+                        <h3 class="feature-title">Digital Health Records</h3>
+                        <p class="feature-description">Secure PDF reports, prescription management, and complete health history tracking.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-chart-bar"></i>
+                        </div>
+                        <h3 class="feature-title">Health Analytics Dashboard</h3>
+                        <p class="feature-description">Track health trends, medication adherence, and receive personalized wellness insights.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3 class="feature-title">24/7 AI + Human Support</h3>
+                        <p class="feature-description">Intelligent AI assistance with seamless escalation to medical professionals when needed.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Choose Us Section -->
+        <section class="section why-choose-us" id="why-choose-us">
+            <div class="container">
+                <h2 class="section-title">Why Choose Sehat Sathi</h2>
+                
+                <div class="benefits-container">
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fas fa-bullseye"></i>
+                        </div>
+                        <div class="benefit-content">
+                            <h3>Medical-Grade Accuracy</h3>
+                            <p>Developed with medical experts and trained on diverse datasets for reliable symptom assessment.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <div class="benefit-content">
+                            <h3>Instant Results (<60 seconds)</h3>
+                            <p>Get AI-powered health insights in under a minute, eliminating long waits and uncertainty.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fas fa-language"></i>
+                        </div>
+                        <div class="benefit-content">
+                            <h3>True Regional Language Support</h3>
+                            <p>Not just translation—context-aware AI that understands local health terminology and concerns.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fas fa-headset"></i>
+                        </div>
+                        <div class="benefit-content">
+                            <h3>Always Available Support</h3>
+                            <p>Round-the-clock assistance with AI guidance and human backup for critical situations.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="benefit-content">
+                            <h3>Localized Health Intelligence</h3>
+                            <p>Region-specific health information, local outbreak alerts, and customized wellness tips.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <div class="benefit-content">
+                            <h3>All-in-One Healthcare Platform</h3>
+                            <p>From symptom checking to medicine delivery and doctor consultations—everything in one app.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="reach-estimate">
+                    <p>Designed for scale—built to serve millions across rural and urban India with equal quality care.</p>
+                </div>
+                
+                <!-- Testimonials -->
+                <div class="testimonials">
+                    <div class="testimonial-card">
+                        <div class="testimonial-image">
+                            <img src="assets/images/review1.jpg" alt="Doctor Consultation">
+                        </div>
+                    <p class="testimonial-text">"You were amazing! It was a pleasure to witness the creativity, passion, and clarity of thought that your team brough to the Axis HackSprint 2025. Wishing you continued success Dishank Singh! Keep building & pushing boundaries."</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div class="author-info">
+                                <h4>Shumbul Arifa</h4>
+                                <p>Software Engineer @Microsoft</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-card">
+                        <div class="testimonial-image">
+                            <img src="assets/images/review2.jpg" alt="Doctor Consultation">
+                        </div>
+                        <p class="testimonial-text">"Loved Team Nexcontra's energy !! Your idea was very impressive and the way it helps users book doctor appointments so smoothly shows real thought and real-world impact. Keep building, you're definitely on the right track! All the best."</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div class="author-info">
+                                <h4>Trisha Moitra</h4>
+                                <p>SRE @Newfold Digital</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-card">
+                        <div class="testimonial-image">
+                            <img src="assets/images/review3.jpg" alt="Lab Tests">
+                        </div>
+                        <p class="testimonial-text">"Absolutely loved Team Nexcontra's energy! No matter the results, keep yourself detached from them, keep pushing forward, and you won't even realise, it was your day! Wishing you all the success ahead."</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div class="author-info">
+                                <h4>Aditya Prakash Gupta</h4>
+                                <p>Senior Software Engineer @Oracle</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section" id="ready-to-use">
+            <div class="container">
+                <h2 class="cta-title">Ready to use Sehat Sathi?</h2>
+                <p class="cta-description">Start now — check symptoms in seconds. Create an account to save your reports and access personalized recommendations.</p>
+                <button class="btn btn-secondary btn-large" id="cta-button">Check Symptoms</button>
+            </div>
+        </section>
+    </main>
+
+    <!-- Login/Signup Modal -->
+    <div class="modal" id="auth-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Welcome to Sehat Sathi</h3>
+                <button class="close-modal" id="close-auth-modal">&times;</button>
+            </div>
+            
+            <div class="tabs">
+                <div class="tab" data-tab="signup">Sign Up</div>
+                <div class="tab active" data-tab="login">Login</div>
+            </div>
+
+            <div class="tab-content" id="signup-tab">
+                <!-- Credential suggestion for signup -->
+                <div class="credential-suggestion" id="signup-credential-suggestion">
+                    <p>We found an account for this email — try signing in instead.</p>
+                    <button class="use-credential-btn" id="use-signup-credential">Switch to Login</button>
+                </div>
+                
+                <form id="signup-form">
+                    <div class="form-group">
+                        <label for="signup-name" class="form-label">Full Name</label>
+                        <input type="text" id="signup-name" class="form-control" required>
+                        <div class="validation-message" id="signup-name-message"></div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="signup-email" class="form-label">Email</label>
+                        <input type="email" id="signup-email" class="form-control" required>
+                        <div class="validation-message" id="signup-email-message"></div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="signup-phone" class="form-label">Phone Number</label>
+                        <input type="tel" id="signup-phone" class="form-control" placeholder="+91 9876543210" required>
+                        <div class="validation-message" id="signup-phone-message"></div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="signup-password" class="form-label">Password</label>
+                        <input type="password" id="signup-password" class="form-control" required minlength="8">
+                        <div class="validation-message" id="signup-password-message">
+                            Password must be at least 8 characters
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="signup-language" class="form-label">Preferred Language</label>
+                        <select id="signup-language" class="form-control" required>
+                            <option value="">Select Language</option>
+                            <option value="en">English</option>
+                            <option value="hi">Hindi</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="allow-location">
+                            <label for="allow-location">Allow location access for better healthcare recommendations</label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="consent" required>
+                            <label for="consent">I agree to the Terms of Service and Privacy Policy</label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary" style="width: 100%;" id="signup-submit-btn" disabled>
+                            Create Account
+                        </button>
+                    </div>
+                    
+                    <div class="form-footer">
+                        <p>Already have an account? <a href="#" id="switch-to-login">Login</a></p>
+                    </div>
+                </form>
+            </div>
+            
+            <div class="tab-content active" id="login-tab">
+                <!-- Credential suggestion for login -->
+                <div class="credential-suggestion" id="login-credential-suggestion">
+                    <p>We found an account for this email — would you like to use it?</p>
+                    <button class="use-credential-btn" id="use-login-credential">Use this account</button>
+                </div>
+                
+                <form id="login-form">
+                    <div class="form-group">
+                        <label for="login-email" class="form-label">Email or Phone</label>
+                        <input type="text" id="login-email" class="form-control" required>
+                        <div class="validation-message" id="login-email-message"></div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="login-password" class="form-label">Password</label>
+                        <input type="password" id="login-password" class="form-control" required>
+                        <div class="validation-message" id="login-password-message"></div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary" style="width: 100%;" id="login-submit-btn" disabled>
+                            Login
+                        </button>
+                    </div>
+                    
+                    <div class="form-footer">
+                        <p>Don't have an account? <a href="#" id="switch-to-signup">Sign up</a></p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <div class="footer-logo">
+                        <img src="assets/images/logoSehat.png" alt="Sehat Sathi Logo" class="footer-logo-img">
+                        <span>Sehat Sathi</span>
+                    </div>
+                    <p class="footer-description">
+                        AI-first symptom check and healthcare assistance. Get trusted AI guidance in your language in under a minute.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#medicine-delivery">Medicine Delivery</a></li>
+                        <li><a href="#consult-doctors">Consult Doctors</a></li>
+                        <li><a href="#lab-tests">Lab Tests</a></li>
+                        <li><a href="#how-it-works">How it Works</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">FAQs</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h3>Contact Info</h3>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> support@sehatsathi.com</li>
+                        <li><i class="fas fa-phone"></i> +91 98765 43210</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Health Tech Park, Bangalore, India</li>
+                    </ul>
+                    <div class="footer-badges" style="margin-top: 1.5rem;">
+                        <div class="badge">
+                            <i class="fas fa-language"></i>
+                            <span>Available in 8+ Regional languages</span>
+                        </div>
+                        <div class="badge">
+                            <i class="fas fa-headset"></i>
+                            <span>24/7 Support</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>Made with <i class="fas fa-heart" style="color: #e74c3c;"></i> by Sehat Sathi Team • © 2023 Sehat Sathi. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="services/api.js"></script>
+    <script src="utils/helpers.js"></script>
+</body>
+</html>

@@ -1,0 +1,1201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Sehat Sathi</title>
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="../css/auth.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="../assets/images/favicon.ico">
+</head>
+<body>
+    <!-- Navigation Sidebar -->
+    <nav class="sidebar">
+        <div class="sidebar-header">
+            <div class="logo">
+                <img src="../assets/images/logo.png" alt="Sehat Sathi Logo" class="logo-img">
+                <h1>Sehat Sathi</h1>
+            </div>
+            <button class="sidebar-toggle" id="sidebarToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+
+        <div class="user-profile">
+            <div class="user-avatar" id="userAvatar">
+                <!-- Initials will be set by JavaScript -->
+            </div>
+            <div class="user-info">
+                <h3 id="userName">Loading...</h3>
+                <p id="userEmail">Loading...</p>
+                <div class="user-status">
+                    <span class="status-dot active"></span>
+                    <span>Online</span>
+                </div>
+            </div>
+        </div>
+
+        <ul class="sidebar-menu">
+            <li class="menu-item active">
+                <a href="#">
+                    <i class="fas fa-home"></i>
+                    <span>Dashboard</span>
+                </a>
+            </li>
+            <li class="menu-item">
+                <a href="chatbot.html">
+                    <i class="fas fa-robot"></i>
+                    <span>AI Health Assistant</span>
+                </a>
+            </li>
+            <li class="menu-item">
+                <a href="doctors.html">
+                    <i class="fas fa-user-md"></i>
+                    <span>Find Doctors</span>
+                </a>
+            </li>
+            <li class="menu-item">
+                <a href="appointment.html">
+                    <i class="fas fa-calendar-check"></i>
+                    <span>Appointments</span>
+                    <span class="badge" id="appointmentBadge">0</span>
+                </a>
+            </li>
+            <li class="menu-item">
+                <a href="#">
+                    <i class="fas fa-prescription"></i>
+                    <span>Prescriptions</span>
+                </a>
+            </li>
+            <li class="menu-item">
+                <a href="#">
+                    <i class="fas fa-file-medical"></i>
+                    <span>Health Records</span>
+                </a>
+            </li>
+            <li class="menu-item">
+                <a href="#">
+                    <i class="fas fa-pills"></i>
+                    <span>Medicine Orders</span>
+                </a>
+            </li>
+            <li class="menu-item">
+                <a href="#">
+                    <i class="fas fa-flask"></i>
+                    <span>Lab Tests</span>
+                </a>
+            </li>
+            <li class="menu-item">
+                <a href="#">
+                    <i class="fas fa-heart"></i>
+                    <span>Health Tips</span>
+                </a>
+            </li>
+            <li class="menu-item">
+                <a href="#">
+                    <i class="fas fa-cog"></i>
+                    <span>Settings</span>
+                </a>
+            </li>
+        </ul>
+
+        <div class="sidebar-footer">
+            <button class="btn btn-secondary btn-block" id="emergencyBtn">
+                <i class="fas fa-ambulance"></i>
+                <span>Emergency</span>
+            </button>
+            <button class="btn btn-logout" id="logoutBtn">
+                <i class="fas fa-sign-out-alt"></i>
+                <span>Logout</span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Top Header -->
+        <header class="top-header">
+            <div class="header-left">
+                <h2 id="greeting">Good Morning</h2>
+                <p id="currentDate">Loading date...</p>
+            </div>
+            
+            <div class="header-right">
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="globalSearch" placeholder="Search for doctors, medicines, health tips...">
+                </div>
+                
+                <div class="header-actions">
+                    <button class="header-action-btn" id="notificationsBtn">
+                        <i class="fas fa-bell"></i>
+                        <span class="badge" id="notificationBadge">3</span>
+                    </button>
+                    
+                    <button class="header-action-btn" id="quickConsultBtn">
+                        <i class="fas fa-stethoscope"></i>
+                        <span>Quick Consult</span>
+                    </button>
+                    
+                    <button class="header-action-btn primary" id="checkSymptomsBtn">
+                        <i class="fas fa-heartbeat"></i>
+                        <span>Check Symptoms</span>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Dashboard Content -->
+        <div class="dashboard-content">
+            <!-- Welcome Banner -->
+            <div class="welcome-banner">
+                <div class="banner-content">
+                    <h3>Welcome back, <span id="userFirstName">User</span>!</h3>
+                    <p>How are you feeling today? Your AI health assistant is ready to help.</p>
+                    <div class="banner-actions">
+                        <button class="btn btn-primary" onclick="window.location.href='chatbot.html'">
+                            <i class="fas fa-robot"></i>
+                            <span>Talk to Health Assistant</span>
+                        </button>
+                        <button class="btn btn-secondary" onclick="window.location.href='doctors.html'">
+                            <i class="fas fa-user-md"></i>
+                            <span>Find a Doctor</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="banner-image">
+                    <i class="fas fa-heartbeat"></i>
+                </div>
+            </div>
+
+            <!-- Quick Actions -->
+            <div class="section">
+                <div class="section-header">
+                    <h3>Quick Actions</h3>
+                    <a href="#" class="view-all">View All</a>
+                </div>
+                <div class="quick-actions-grid">
+                    <div class="quick-action" onclick="window.location.href='chatbot.html'">
+                        <div class="action-icon">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <div class="action-info">
+                            <h4>AI Symptom Check</h4>
+                            <p>Check symptoms instantly</p>
+                        </div>
+                    </div>
+                    
+                    <div class="quick-action" onclick="window.location.href='doctors.html'">
+                        <div class="action-icon">
+                            <i class="fas fa-user-md"></i>
+                        </div>
+                        <div class="action-info">
+                            <h4>Doctor Consultation</h4>
+                            <p>Book appointment now</p>
+                        </div>
+                    </div>
+                    
+                    <div class="quick-action" onclick="window.location.href='appointment.html'">
+                        <div class="action-icon">
+                            <i class="fas fa-calendar"></i>
+                        </div>
+                        <div class="action-info">
+                            <h4>My Appointments</h4>
+                            <p>View upcoming visits</p>
+                        </div>
+                    </div>
+                    
+                    <div class="quick-action" onclick="showMedicineModal()">
+                        <div class="action-icon">
+                            <i class="fas fa-pills"></i>
+                        </div>
+                        <div class="action-info">
+                            <h4>Order Medicine</h4>
+                            <p>Get delivery at home</p>
+                        </div>
+                    </div>
+                    
+                    <div class="quick-action" onclick="window.location.href='#'">
+                        <div class="action-icon">
+                            <i class="fas fa-flask"></i>
+                        </div>
+                        <div class="action-info">
+                            <h4>Book Lab Test</h4>
+                            <p>Home sample collection</p>
+                        </div>
+                    </div>
+                    
+                    <div class="quick-action" onclick="window.location.href='#'">
+                        <div class="action-icon">
+                            <i class="fas fa-file-medical"></i>
+                        </div>
+                        <div class="action-info">
+                            <h4>Health Records</h4>
+                            <p>Access medical history</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Health Stats -->
+            <div class="section">
+                <div class="section-header">
+                    <h3>Your Health Stats</h3>
+                    <a href="#" class="view-all">View Details</a>
+                </div>
+                <div class="health-stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-header">
+                            <h4>Heart Rate</h4>
+                            <div class="stat-trend up">
+                                <i class="fas fa-arrow-up"></i>
+                                <span>Normal</span>
+                            </div>
+                        </div>
+                        <div class="stat-value">72 <span class="unit">bpm</span></div>
+                        <div class="stat-footer">
+                            <span class="stat-time">Last checked: 2 hours ago</span>
+                            <button class="btn btn-sm" onclick="checkVitals('heart')">Check Now</button>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-header">
+                            <h4>Blood Pressure</h4>
+                            <div class="stat-trend down">
+                                <i class="fas fa-arrow-down"></i>
+                                <span>Optimal</span>
+                            </div>
+                        </div>
+                        <div class="stat-value">120/80 <span class="unit">mmHg</span></div>
+                        <div class="stat-footer">
+                            <span class="stat-time">Last checked: 1 day ago</span>
+                            <button class="btn btn-sm" onclick="checkVitals('bp')">Check Now</button>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-header">
+                            <h4>Blood Sugar</h4>
+                            <div class="stat-trend stable">
+                                <i class="fas fa-minus"></i>
+                                <span>Normal</span>
+                            </div>
+                        </div>
+                        <div class="stat-value">98 <span class="unit">mg/dL</span></div>
+                        <div class="stat-footer">
+                            <span class="stat-time">Last checked: 3 days ago</span>
+                            <button class="btn btn-sm" onclick="checkVitals('sugar')">Check Now</button>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-header">
+                            <h4>Weight</h4>
+                            <div class="stat-trend stable">
+                                <i class="fas fa-minus"></i>
+                                <span>Stable</span>
+                            </div>
+                        </div>
+                        <div class="stat-value">68 <span class="unit">kg</span></div>
+                        <div class="stat-footer">
+                            <span class="stat-time">Last checked: 1 week ago</span>
+                            <button class="btn btn-sm" onclick="checkVitals('weight')">Update</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Upcoming Appointments -->
+            <div class="section">
+                <div class="section-header">
+                    <h3>Upcoming Appointments</h3>
+                    <a href="appointment.html" class="view-all">View All</a>
+                </div>
+                <div class="appointments-list" id="appointmentsList">
+                    <!-- Appointments will be loaded here -->
+                    <div class="loading">Loading appointments...</div>
+                </div>
+            </div>
+
+            <!-- Recent Health Activities -->
+            <div class="section">
+                <div class="section-header">
+                    <h3>Recent Activities</h3>
+                    <a href="#" class="view-all">View All</a>
+                </div>
+                <div class="activities-timeline" id="activitiesTimeline">
+                    <!-- Activities will be loaded here -->
+                    <div class="loading">Loading activities...</div>
+                </div>
+            </div>
+
+            <!-- Health Tips -->
+            <div class="section">
+                <div class="section-header">
+                    <h3>Health Tips for You</h3>
+                    <a href="#" class="view-all">More Tips</a>
+                </div>
+                <div class="health-tips-grid" id="healthTips">
+                    <!-- Tips will be loaded here -->
+                    <div class="loading">Loading health tips...</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="dashboard-footer">
+            <p>© 2024 Sehat Sathi. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Contact Support</a>
+            </div>
+        </footer>
+    </main>
+
+    <!-- Notifications Panel -->
+    <div class="notifications-panel" id="notificationsPanel">
+        <div class="panel-header">
+            <h3>Notifications</h3>
+            <button class="close-panel" id="closeNotifications">&times;</button>
+        </div>
+        <div class="panel-content" id="notificationsContent">
+            <!-- Notifications will be loaded here -->
+        </div>
+    </div>
+
+    <!-- Emergency Modal -->
+    <div class="modal" id="emergencyModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Emergency Assistance</h3>
+                <button class="close-modal" id="closeEmergencyModal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="emergency-options">
+                    <button class="emergency-option" onclick="callEmergency('911')">
+                        <i class="fas fa-phone-alt"></i>
+                        <div>
+                            <h4>Call Emergency Services</h4>
+                            <p>Dial 911 immediately</p>
+                        </div>
+                    </button>
+                    
+                    <button class="emergency-option" onclick="callEmergency('108')">
+                        <i class="fas fa-ambulance"></i>
+                        <div>
+                            <h4>Call Ambulance</h4>
+                            <p>Emergency medical services</p>
+                        </div>
+                    </button>
+                    
+                    <button class="emergency-option" onclick="contactEmergencyContact()">
+                        <i class="fas fa-user-friends"></i>
+                        <div>
+                            <h4>Contact Emergency Contact</h4>
+                            <p>Alert your saved contacts</p>
+                        </div>
+                    </button>
+                    
+                    <button class="emergency-option" onclick="findNearestHospital()">
+                        <i class="fas fa-hospital"></i>
+                        <div>
+                            <h4>Find Nearest Hospital</h4>
+                            <p>Get directions instantly</p>
+                        </div>
+                    </button>
+                </div>
+                
+                <div class="emergency-info">
+                    <h4>What to do in an emergency:</h4>
+                    <ul>
+                        <li>Stay calm and assess the situation</li>
+                        <li>Call emergency services immediately</li>
+                        <li>Provide clear location details</li>
+                        <li>Follow instructions from emergency responders</li>
+                        <li>Do not move the person unless necessary</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Medicine Order Modal -->
+    <div class="modal" id="medicineModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Order Medicines</h3>
+                <button class="close-modal" id="closeMedicineModal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="medicine-options">
+                    <button class="medicine-option" onclick="searchMedicines()">
+                        <i class="fas fa-search"></i>
+                        <div>
+                            <h4>Search Medicines</h4>
+                            <p>Find and order medicines</p>
+                        </div>
+                    </button>
+                    
+                    <button class="medicine-option" onclick="uploadPrescription()">
+                        <i class="fas fa-file-upload"></i>
+                        <div>
+                            <h4>Upload Prescription</h4>
+                            <p>Upload doctor's prescription</p>
+                        </div>
+                    </button>
+                    
+                    <button class="medicine-option" onclick="viewOrderHistory()">
+                        <i class="fas fa-history"></i>
+                        <div>
+                            <h4>Order History</h4>
+                            <p>View past orders</p>
+                        </div>
+                    </button>
+                </div>
+                
+                <div class="current-prescriptions" id="currentPrescriptions">
+                    <h4>Current Prescriptions</h4>
+                    <!-- Prescriptions will be loaded here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="../js/main.js"></script>
+    <script src="../js/dashboard.js"></script>
+    <script>
+        // Initialize dashboard
+        document.addEventListener('DOMContentLoaded', function() {
+            // Check authentication
+            if (!userSession.isAuthenticated()) {
+                window.location.href = 'login.html';
+                return;
+            }
+            
+            // Load user data
+            loadUserData();
+            
+            // Set up event listeners
+            setupEventListeners();
+            
+            // Load dashboard data
+            loadDashboardData();
+            
+            // Update greeting based on time
+            updateGreeting();
+            
+            // Update current date
+            updateCurrentDate();
+        });
+        
+        function loadUserData() {
+            const user = userSession.user;
+            if (user) {
+                // Update user name
+                const userName = document.getElementById('userName');
+                const userFirstName = document.getElementById('userFirstName');
+                const userEmail = document.getElementById('userEmail');
+                const userAvatar = document.getElementById('userAvatar');
+                
+                if (userName) {
+                    userName.textContent = user.name || 'User';
+                }
+                
+                if (userFirstName) {
+                    const firstName = user.name ? user.name.split(' ')[0] : 'User';
+                    userFirstName.textContent = firstName;
+                }
+                
+                if (userEmail) {
+                    userEmail.textContent = user.email || '';
+                }
+                
+                if (userAvatar) {
+                    // Generate initials for avatar
+                    const initials = user.name 
+                        ? user.name.split(' ').map(n => n[0]).join('').toUpperCase().substring(0, 2)
+                        : 'US';
+                    userAvatar.textContent = initials;
+                    
+                    // Add random background color
+                    const colors = ['#0FAF6E', '#0A7FD5', '#9b59b6', '#e74c3c', '#f39c12'];
+                    const randomColor = colors[Math.floor(Math.random() * colors.length)];
+                    userAvatar.style.backgroundColor = randomColor;
+                }
+            }
+        }
+        
+        function setupEventListeners() {
+            // Sidebar toggle
+            const sidebarToggle = document.getElementById('sidebarToggle');
+            const sidebar = document.querySelector('.sidebar');
+            
+            if (sidebarToggle && sidebar) {
+                sidebarToggle.addEventListener('click', () => {
+                    sidebar.classList.toggle('collapsed');
+                });
+            }
+            
+            // Notifications panel
+            const notificationsBtn = document.getElementById('notificationsBtn');
+            const notificationsPanel = document.getElementById('notificationsPanel');
+            const closeNotifications = document.getElementById('closeNotifications');
+            
+            if (notificationsBtn && notificationsPanel) {
+                notificationsBtn.addEventListener('click', () => {
+                    notificationsPanel.classList.add('show');
+                    loadNotifications();
+                });
+                
+                if (closeNotifications) {
+                    closeNotifications.addEventListener('click', () => {
+                        notificationsPanel.classList.remove('show');
+                    });
+                }
+            }
+            
+            // Emergency button
+            const emergencyBtn = document.getElementById('emergencyBtn');
+            const emergencyModal = document.getElementById('emergencyModal');
+            const closeEmergencyModal = document.getElementById('closeEmergencyModal');
+            
+            if (emergencyBtn && emergencyModal) {
+                emergencyBtn.addEventListener('click', () => {
+                    emergencyModal.classList.add('show');
+                });
+                
+                if (closeEmergencyModal) {
+                    closeEmergencyModal.addEventListener('click', () => {
+                        emergencyModal.classList.remove('show');
+                    });
+                }
+            }
+            
+            // Quick consult button
+            const quickConsultBtn = document.getElementById('quickConsultBtn');
+            if (quickConsultBtn) {
+                quickConsultBtn.addEventListener('click', () => {
+                    window.location.href = 'chatbot.html';
+                });
+            }
+            
+            // Check symptoms button
+            const checkSymptomsBtn = document.getElementById('checkSymptomsBtn');
+            if (checkSymptomsBtn) {
+                checkSymptomsBtn.addEventListener('click', () => {
+                    window.location.href = 'chatbot.html';
+                });
+            }
+            
+            // Logout button
+            const logoutBtn = document.getElementById('logoutBtn');
+            if (logoutBtn) {
+                logoutBtn.addEventListener('click', () => {
+                    userSession.logout();
+                });
+            }
+            
+            // Global search
+            const globalSearch = document.getElementById('globalSearch');
+            if (globalSearch) {
+                globalSearch.addEventListener('keypress', (e) => {
+                    if (e.key === 'Enter') {
+                        const query = globalSearch.value.trim();
+                        if (query) {
+                            performGlobalSearch(query);
+                        }
+                    }
+                });
+            }
+            
+            // Close modals on backdrop click
+            document.addEventListener('click', (e) => {
+                const emergencyModal = document.getElementById('emergencyModal');
+                const medicineModal = document.getElementById('medicineModal');
+                
+                if (emergencyModal && e.target === emergencyModal) {
+                    emergencyModal.classList.remove('show');
+                }
+                
+                if (medicineModal && e.target === medicineModal) {
+                    medicineModal.classList.remove('show');
+                }
+            });
+            
+            // Escape key to close modals
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') {
+                    const emergencyModal = document.getElementById('emergencyModal');
+                    const medicineModal = document.getElementById('medicineModal');
+                    const notificationsPanel = document.getElementById('notificationsPanel');
+                    
+                    if (emergencyModal && emergencyModal.classList.contains('show')) {
+                        emergencyModal.classList.remove('show');
+                    }
+                    
+                    if (medicineModal && medicineModal.classList.contains('show')) {
+                        medicineModal.classList.remove('show');
+                    }
+                    
+                    if (notificationsPanel && notificationsPanel.classList.contains('show')) {
+                        notificationsPanel.classList.remove('show');
+                    }
+                }
+            });
+        }
+        
+        function updateGreeting() {
+            const hour = new Date().getHours();
+            let greeting = 'Good Evening';
+            
+            if (hour < 12) {
+                greeting = 'Good Morning';
+            } else if (hour < 17) {
+                greeting = 'Good Afternoon';
+            }
+            
+            const greetingElement = document.getElementById('greeting');
+            if (greetingElement) {
+                greetingElement.textContent = greeting;
+            }
+        }
+        
+        function updateCurrentDate() {
+            const now = new Date();
+            const options = { 
+                weekday: 'long', 
+                year: 'numeric', 
+                month: 'long', 
+                day: 'numeric' 
+            };
+            const dateString = now.toLocaleDateString('en-US', options);
+            
+            const dateElement = document.getElementById('currentDate');
+            if (dateElement) {
+                dateElement.textContent = dateString;
+            }
+        }
+        
+        async function loadDashboardData() {
+            try {
+                // Show loading states
+                ui.showLoading();
+                
+                // Load appointments
+                await loadAppointments();
+                
+                // Load activities
+                await loadActivities();
+                
+                // Load health tips
+                await loadHealthTips();
+                
+                // Load notifications count
+                await loadNotificationCount();
+                
+                // Load appointment count
+                await loadAppointmentCount();
+                
+            } catch (error) {
+                console.error('Error loading dashboard data:', error);
+                ui.showNotification('Failed to load dashboard data', 'error');
+            } finally {
+                ui.hideLoading();
+            }
+        }
+        
+        async function loadAppointments() {
+            try {
+                const appointmentsList = document.getElementById('appointmentsList');
+                if (!appointmentsList) return;
+                
+                // Mock data - in real app, this would come from API
+                const mockAppointments = [
+                    {
+                        id: 1,
+                        doctor: 'Dr. Sharma',
+                        specialization: 'Cardiologist',
+                        date: new Date(Date.now() + 86400000).toISOString(), // Tomorrow
+                        time: '10:00 AM',
+                        type: 'Video Consultation',
+                        status: 'confirmed'
+                    },
+                    {
+                        id: 2,
+                        doctor: 'Dr. Patel',
+                        specialization: 'Dermatologist',
+                        date: new Date(Date.now() + 172800000).toISOString(), // Day after tomorrow
+                        time: '2:30 PM',
+                        type: 'Clinic Visit',
+                        status: 'confirmed'
+                    },
+                    {
+                        id: 3,
+                        doctor: 'Dr. Kumar',
+                        specialization: 'General Physician',
+                        date: new Date(Date.now() + 259200000).toISOString(), // 3 days later
+                        time: '11:00 AM',
+                        type: 'Video Consultation',
+                        status: 'pending'
+                    }
+                ];
+                
+                if (mockAppointments.length === 0) {
+                    appointmentsList.innerHTML = `
+                        <div class="empty-state">
+                            <i class="fas fa-calendar"></i>
+                            <p>No upcoming appointments</p>
+                            <button class="btn btn-primary" onclick="window.location.href='doctors.html'">
+                                Book Appointment
+                            </button>
+                        </div>
+                    `;
+                    return;
+                }
+                
+                let html = '';
+                mockAppointments.forEach(appointment => {
+                    const appointmentDate = new Date(appointment.date);
+                    const formattedDate = appointmentDate.toLocaleDateString('en-US', {
+                        weekday: 'short',
+                        month: 'short',
+                        day: 'numeric'
+                    });
+                    
+                    const timeLeft = Math.floor((appointmentDate - new Date()) / (1000 * 60 * 60 * 24));
+                    let timeText = '';
+                    
+                    if (timeLeft === 0) {
+                        timeText = 'Today';
+                    } else if (timeLeft === 1) {
+                        timeText = 'Tomorrow';
+                    } else {
+                        timeText = `In ${timeLeft} days`;
+                    }
+                    
+                    html += `
+                        <div class="appointment-card ${appointment.status}">
+                            <div class="appointment-header">
+                                <div class="doctor-info">
+                                    <div class="doctor-avatar">
+                                        <i class="fas fa-user-md"></i>
+                                    </div>
+                                    <div>
+                                        <h4>${appointment.doctor}</h4>
+                                        <p class="specialization">${appointment.specialization}</p>
+                                    </div>
+                                </div>
+                                <span class="appointment-type">${appointment.type}</span>
+                            </div>
+                            <div class="appointment-details">
+                                <div class="detail">
+                                    <i class="fas fa-calendar"></i>
+                                    <span>${formattedDate} • ${appointment.time}</span>
+                                </div>
+                                <div class="detail">
+                                    <i class="fas fa-clock"></i>
+                                    <span>${timeText}</span>
+                                </div>
+                            </div>
+                            <div class="appointment-actions">
+                                <button class="btn btn-sm ${appointment.status === 'confirmed' ? 'btn-primary' : 'btn-secondary'}" 
+                                        onclick="viewAppointment(${appointment.id})">
+                                    ${appointment.status === 'confirmed' ? 'Join Call' : 'Confirm'}
+                                </button>
+                                <button class="btn btn-sm btn-outline" onclick="cancelAppointment(${appointment.id})">
+                                    Cancel
+                                </button>
+                            </div>
+                        </div>
+                    `;
+                });
+                
+                appointmentsList.innerHTML = html;
+                
+            } catch (error) {
+                console.error('Error loading appointments:', error);
+                const appointmentsList = document.getElementById('appointmentsList');
+                if (appointmentsList) {
+                    appointmentsList.innerHTML = `
+                        <div class="error-state">
+                            <i class="fas fa-exclamation-circle"></i>
+                            <p>Failed to load appointments</p>
+                            <button class="btn btn-secondary" onclick="loadAppointments()">
+                                Try Again
+                            </button>
+                        </div>
+                    `;
+                }
+            }
+        }
+        
+        async function loadActivities() {
+            try {
+                const activitiesTimeline = document.getElementById('activitiesTimeline');
+                if (!activitiesTimeline) return;
+                
+                // Mock data
+                const mockActivities = [
+                    {
+                        id: 1,
+                        type: 'consultation',
+                        title: 'Video consultation with Dr. Sharma',
+                        description: 'Cardiology follow-up',
+                        time: '2 hours ago',
+                        icon: 'fa-video'
+                    },
+                    {
+                        id: 2,
+                        type: 'prescription',
+                        title: 'New prescription added',
+                        description: 'Medication for blood pressure',
+                        time: '1 day ago',
+                        icon: 'fa-prescription'
+                    },
+                    {
+                        id: 3,
+                        type: 'lab_test',
+                        title: 'Lab test results available',
+                        description: 'Complete blood count',
+                        time: '3 days ago',
+                        icon: 'fa-flask'
+                    },
+                    {
+                        id: 4,
+                        type: 'medicine',
+                        title: 'Medicine order delivered',
+                        description: 'Order #MED-12345',
+                        time: '1 week ago',
+                        icon: 'fa-pills'
+                    },
+                    {
+                        id: 5,
+                        type: 'symptom',
+                        title: 'Symptom check completed',
+                        description: 'AI health assessment',
+                        time: '2 weeks ago',
+                        icon: 'fa-robot'
+                    }
+                ];
+                
+                let html = '';
+                mockActivities.forEach(activity => {
+                    html += `
+                        <div class="activity-item">
+                            <div class="activity-icon">
+                                <i class="fas ${activity.icon}"></i>
+                            </div>
+                            <div class="activity-content">
+                                <h4>${activity.title}</h4>
+                                <p>${activity.description}</p>
+                                <span class="activity-time">${activity.time}</span>
+                            </div>
+                        </div>
+                    `;
+                });
+                
+                activitiesTimeline.innerHTML = html;
+                
+            } catch (error) {
+                console.error('Error loading activities:', error);
+            }
+        }
+        
+        async function loadHealthTips() {
+            try {
+                const healthTips = document.getElementById('healthTips');
+                if (!healthTips) return;
+                
+                // Mock data
+                const mockTips = [
+                    {
+                        id: 1,
+                        title: 'Stay Hydrated',
+                        description: 'Drink at least 8 glasses of water daily',
+                        category: 'wellness',
+                        icon: 'fa-tint'
+                    },
+                    {
+                        id: 2,
+                        title: 'Regular Exercise',
+                        description: '30 minutes of moderate exercise daily',
+                        category: 'fitness',
+                        icon: 'fa-running'
+                    },
+                    {
+                        id: 3,
+                        title: 'Healthy Diet',
+                        description: 'Include fruits and vegetables in every meal',
+                        category: 'nutrition',
+                        icon: 'fa-apple-alt'
+                    },
+                    {
+                        id: 4,
+                        title: 'Adequate Sleep',
+                        description: 'Get 7-9 hours of quality sleep',
+                        category: 'wellness',
+                        icon: 'fa-bed'
+                    }
+                ];
+                
+                let html = '';
+                mockTips.forEach(tip => {
+                    html += `
+                        <div class="tip-card">
+                            <div class="tip-icon">
+                                <i class="fas ${tip.icon}"></i>
+                            </div>
+                            <div class="tip-content">
+                                <h4>${tip.title}</h4>
+                                <p>${tip.description}</p>
+                                <span class="tip-category">${tip.category}</span>
+                            </div>
+                        </div>
+                    `;
+                });
+                
+                healthTips.innerHTML = html;
+                
+            } catch (error) {
+                console.error('Error loading health tips:', error);
+            }
+        }
+        
+        async function loadNotificationCount() {
+            try {
+                // Mock count
+                const count = 3;
+                const badge = document.getElementById('notificationBadge');
+                if (badge) {
+                    badge.textContent = count;
+                    badge.style.display = count > 0 ? 'flex' : 'none';
+                }
+            } catch (error) {
+                console.error('Error loading notification count:', error);
+            }
+        }
+        
+        async function loadAppointmentCount() {
+            try {
+                // Mock count
+                const count = 2;
+                const badge = document.getElementById('appointmentBadge');
+                if (badge) {
+                    badge.textContent = count;
+                    badge.style.display = count > 0 ? 'flex' : 'none';
+                }
+            } catch (error) {
+                console.error('Error loading appointment count:', error);
+            }
+        }
+        
+        async function loadNotifications() {
+            try {
+                const notificationsContent = document.getElementById('notificationsContent');
+                if (!notificationsContent) return;
+                
+                // Mock notifications
+                const mockNotifications = [
+                    {
+                        id: 1,
+                        title: 'Appointment Reminder',
+                        message: 'Your appointment with Dr. Sharma is tomorrow at 10:00 AM',
+                        time: '2 hours ago',
+                        read: false,
+                        type: 'appointment'
+                    },
+                    {
+                        id: 2,
+                        title: 'Prescription Ready',
+                        message: 'Your new prescription is available for viewing',
+                        time: '1 day ago',
+                        read: false,
+                        type: 'prescription'
+                    },
+                    {
+                        id: 3,
+                        title: 'Lab Results',
+                        message: 'Your recent lab test results are now available',
+                        time: '3 days ago',
+                        read: true,
+                        type: 'lab'
+                    },
+                    {
+                        id: 4,
+                        title: 'Health Tip',
+                        message: 'New health tip: Importance of regular exercise',
+                        time: '1 week ago',
+                        read: true,
+                        type: 'tip'
+                    }
+                ];
+                
+                let html = '';
+                const unreadCount = mockNotifications.filter(n => !n.read).length;
+                
+                if (unreadCount > 0) {
+                    html += `
+                        <div class="notifications-header">
+                            <span class="unread-count">${unreadCount} unread</span>
+                            <button class="btn btn-sm" onclick="markAllAsRead()">Mark all as read</button>
+                        </div>
+                    `;
+                }
+                
+                mockNotifications.forEach(notification => {
+                    html += `
+                        <div class="notification-item ${notification.read ? 'read' : 'unread'}">
+                            <div class="notification-icon">
+                                <i class="fas fa-${getNotificationIcon(notification.type)}"></i>
+                            </div>
+                            <div class="notification-content">
+                                <h4>${notification.title}</h4>
+                                <p>${notification.message}</p>
+                                <span class="notification-time">${notification.time}</span>
+                            </div>
+                            ${!notification.read ? '<span class="unread-dot"></span>' : ''}
+                        </div>
+                    `;
+                });
+                
+                if (mockNotifications.length === 0) {
+                    html = `
+                        <div class="empty-notifications">
+                            <i class="fas fa-bell-slash"></i>
+                            <p>No notifications</p>
+                        </div>
+                    `;
+                }
+                
+                notificationsContent.innerHTML = html;
+                
+            } catch (error) {
+                console.error('Error loading notifications:', error);
+                const notificationsContent = document.getElementById('notificationsContent');
+                if (notificationsContent) {
+                    notificationsContent.innerHTML = `
+                        <div class="error-notifications">
+                            <i class="fas fa-exclamation-circle"></i>
+                            <p>Failed to load notifications</p>
+                            <button class="btn btn-sm" onclick="loadNotifications()">Try Again</button>
+                        </div>
+                    `;
+                }
+            }
+        }
+        
+        function getNotificationIcon(type) {
+            const icons = {
+                appointment: 'calendar-check',
+                prescription: 'prescription',
+                lab: 'flask',
+                tip: 'lightbulb',
+                default: 'bell'
+            };
+            return icons[type] || icons.default;
+        }
+        
+        function performGlobalSearch(query) {
+            ui.showNotification(`Searching for: ${query}`, 'info');
+            // In a real app, this would redirect to search results page
+            // or show search results in a modal
+        }
+        
+        function showMedicineModal() {
+            const medicineModal = document.getElementById('medicineModal');
+            if (medicineModal) {
+                medicineModal.classList.add('show');
+            }
+        }
+        
+        function checkVitals(type) {
+            const messages = {
+                heart: 'Checking heart rate... Please place your finger on the camera.',
+                bp: 'Checking blood pressure... Please sit comfortably.',
+                sugar: 'Checking blood sugar levels...',
+                weight: 'Please update your weight in the health profile.'
+            };
+            
+            ui.showNotification(messages[type] || 'Checking vitals...', 'info');
+            
+            // In a real app, this would open a modal or redirect to vitals checking page
+        }
+        
+        function viewAppointment(appointmentId) {
+            ui.showNotification(`Opening appointment ${appointmentId}...`, 'info');
+            // In a real app, this would redirect to appointment details page
+            // or open video consultation
+        }
+        
+        function cancelAppointment(appointmentId) {
+            ui.confirm('Are you sure you want to cancel this appointment?', {
+                title: 'Cancel Appointment',
+                confirmText: 'Yes, Cancel',
+                cancelText: 'No, Keep',
+                danger: true
+            }).then(confirmed => {
+                if (confirmed) {
+                    ui.showNotification('Appointment cancelled successfully', 'success');
+                    // In a real app, this would call API to cancel appointment
+                    loadAppointments(); // Refresh the list
+                }
+            });
+        }
+        
+        function callEmergency(number) {
+            ui.confirm(`Call ${number}?`, {
+                title: 'Emergency Call',
+                confirmText: 'Call Now',
+                danger: true
+            }).then(confirmed => {
+                if (confirmed) {
+                    window.location.href = `tel:${number}`;
+                }
+            });
+        }
+        
+        function contactEmergencyContact() {
+            ui.showNotification('Alerting emergency contacts...', 'info');
+            // In a real app, this would send alerts to saved emergency contacts
+        }
+        
+        function findNearestHospital() {
+            ui.showNotification('Finding nearest hospitals...', 'info');
+            window.open('https://www.google.com/maps/search/hospitals', '_blank');
+        }
+        
+        function searchMedicines() {
+            window.location.href = '../index.html#medicine-delivery';
+        }
+        
+        function uploadPrescription() {
+            window.location.href = '../index.html#medicine-delivery';
+        }
+        
+        function viewOrderHistory() {
+            ui.showNotification('Opening order history...', 'info');
+            // In a real app, this would redirect to order history page
+        }
+        
+        function markAllAsRead() {
+            const badge = document.getElementById('notificationBadge');
+            if (badge) {
+                badge.style.display = 'none';
+            }
+            
+            const notificationsPanel = document.getElementById('notificationsPanel');
+            if (notificationsPanel) {
+                notificationsPanel.classList.remove('show');
+            }
+            
+            ui.showNotification('All notifications marked as read', 'success');
+            // In a real app, this would update notifications via API
+        }
+    </script>
+</body>
+</html>
