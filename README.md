@@ -24,12 +24,12 @@ Sehat Sathi is a comprehensive healthcare management platform that provides AI-p
 - **dotenv** - Environment configuration
 
 ### Frontend
-- HTML, CSS, JavaScript (already implemented)
+- HTML, CSS, JavaScript
 
 ## Project Structure
 
 ```
-sehat.sathi/
+sehat-sathi/
 ├── backend/                         # Node.js + Express API
 │   ├── src/
 │   │   ├── modules/
