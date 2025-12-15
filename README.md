@@ -258,7 +258,7 @@ For issues or questions, please refer to the API documentation or create an issu
 
 ## Future Enhancements
 
-- Integration with real AI services (OpenAI, etc.)
+- Integration with Basic LLM Model real AI services
 - Email notifications
 - SMS reminders for appointments
 - Payment gateway integration
